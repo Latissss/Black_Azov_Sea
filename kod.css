@@ -1,0 +1,233 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f9fc;
+  color: #333;
+  margin: 0;
+  padding: 0 20px 40px 20px;
+  line-height: 1.6;
+}
+ 
+/* Заголовки */
+h1 {
+  color: #0a3d62;
+  text-align: center;
+  margin-top: 30px;
+}
+ 
+h2 {
+  color: #1e3799;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+ 
+h3 {
+  color: #3867d6;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+ 
+/* Навигация */
+nav {
+  background-color: #3c40c6;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+ 
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+ 
+nav a:hover {
+  color: #fbc531;
+  transform: scale(1.1);
+  
+}
+ 
+/* Основной контент */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+ 
+/* Абзацы */
+p {
+  margin-bottom: 15px;
+  font-size: 1.05em;
+}
+ 
+/* Списки */
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+  color: #2f3640;
+}
+ 
+/* Фото-блок */
+.photo-slot {
+  text-align: center;
+  margin: 30px 0;
+}
+ 
+.photo-slot img {
+ width: 600px;
+    height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+ 
+.caption {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #636e72;
+  margin-top: 6px;
+}
+ 
+/* Подвал */
+footer {
+  text-align: center;
+  color: #7f8fa6;
+  margin-top: 40px;
+  font-size: 0.9em;
+  border-top: 1px solid #dcdde1;
+  padding-top: 15px;
+}
+ 
+ @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Скрываем чекбоксы */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Стиль заголовка (label) */
+.collapsible-label {
+  display: block;
+  background-color: #3c40c6;
+  color: white;
+  padding: 14px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible-label:hover {
+  background-color: #575fcf;
+}
+
+/* Контент изначально скрыт */
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background-color: #f5f9fc;
+  border-left: 3px solid #3c40c6;
+  padding: 0 20px;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 20px;
+}
+
+/* Когда чекбокс активен — показываем контент */
+.toggle-checkbox:checked + .collapsible-label + .content {
+  max-height: 500px; /* достаточно большой, чтобы вместить текст */
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.damage-chart {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.damage-chart h2 {
+  color: #c0392b;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.label {
+  flex: 1;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bar {
+  flex: 3;
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 10px;
+  margin-left: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+}
+ 
+/* Таблица воздействия */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 25px;
+}
+
+.impact-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.impact-table th,
+.impact-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.impact-table th {
+  background-color: #3c40c6;
+  color: white;
+}
+
+.impact-table td:nth-child(4),
+.impact-table td:nth-child(5) {
+  text-align: center;
+}
+
+/* Столбцы графика */
+.bar {
+  height: 20px;
+  background-color: #f39c12;
+  border-radius: 4px;
+  transition: width 0.4s ease-in-out;
+}
